@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         movement = new Vector3(horizontal, 0, vertical);
-        movement = transform.TransformDirection(movement);
+        //movement = transform.TransformDirection(movement);
         movement = movement * speed;
 
         characterController.Move(movement * Time.deltaTime);
