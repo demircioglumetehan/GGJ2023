@@ -29,7 +29,7 @@ public class MolotowThrower : PlayerSkill
         for (int i = 0; i < spawnAmount; i++)
         {
             molotowObjects[i].gameObject.SetActive(true);
-            molotowObjects[i].transform.position = PlayerWrapper.THIS.transform.position ;
+            molotowObjects[i].transform.position = PlayerWrapper.instance.transform.position ;
 
             Vector3 molotowEndPosition = GetRandomCircle();
 
@@ -44,7 +44,7 @@ public class MolotowThrower : PlayerSkill
     {
         var randompointdirection = Random.insideUnitCircle.normalized;
         var point= throwDistance* randompointdirection;
-        return new Vector3(PlayerWrapper.THIS.transform.position.x + point.x, 1f, PlayerWrapper.THIS.transform.position.z + point.y);
+        return new Vector3(PlayerWrapper.instance.transform.position.x + point.x, 1f, PlayerWrapper.instance.transform.position.z + point.y);
 
 
     }

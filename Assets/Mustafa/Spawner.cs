@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            Instantiate(enemies[Random.Range(0,4)], Player.instance.transform.position + CreateRandomPosition(), transform.rotation);
+            Instantiate(enemies[Random.Range(0,4)], PlayerWrapper.instance.transform.position + CreateRandomPosition(), transform.rotation);
             timer = 0;
             if (spawnInterval > 0.15f)
             {
@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
     {
         while (enemyAmount > 0)
         {
-            Instantiate(enemies[Random.Range(0, 4)], Player.instance.transform.position + CreateRandomPosition(), transform.rotation);
+            Instantiate(enemies[Random.Range(0, 4)], PlayerWrapper.instance.transform.position + CreateRandomPosition(), transform.rotation);
             enemyAmount--;
             yield return new WaitForSeconds(intervalMinus);
         }
