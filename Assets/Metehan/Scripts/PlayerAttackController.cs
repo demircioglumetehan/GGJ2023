@@ -32,16 +32,16 @@ public class PlayerAttackController : MonoBehaviour
     {
         turning = false;
     }
-    public void OnPlayerAttackToEnemy(Enemy attackingEnemy)
+    public void OnPlayerAttackToEnemy(IDamageable damageableobject)
     {
         if (turning)
         {
-            attackingEnemy.TakeDamage(currentWeapon.WeaponFeature.hitDamage*2f);
+            damageableobject.TakeDamage(currentWeapon.WeaponFeature.hitDamage*2f);
 
         }
         if (attacking)
         {
-            attackingEnemy.TakeDamage(currentWeapon.WeaponFeature.hitDamage);
+            damageableobject.TakeDamage(currentWeapon.WeaponFeature.hitDamage);
         }
             
     }
