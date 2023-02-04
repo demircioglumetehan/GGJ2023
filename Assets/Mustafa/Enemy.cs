@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int damageAmount=3;
     [SerializeField] protected float health=8;
     [SerializeField] protected float speed = 5f;
+    [SerializeField] protected int xp = 5;
     private void Update()
     {
         FollowPlayer();
@@ -23,6 +25,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             OnDestroyEnemyObject();
+            ExperienceSystem.instance.AddXP(xp);
+
         }
 
     }
@@ -31,6 +35,7 @@ public class Enemy : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
 
     public void FollowPlayer()
     {
