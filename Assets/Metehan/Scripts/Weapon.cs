@@ -13,9 +13,9 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent<Enemy>(out var enemy))
+        if(other.TryGetComponent<IDamageable>(out var damagable))
         {
-            PlayerWrapper.instance.PlayerAttackController.OnPlayerAttackToEnemy(enemy);
+            PlayerWrapper.instance.PlayerAttackController.OnPlayerAttackToEnemy(damagable);
         }
     }
 }

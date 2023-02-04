@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour,IDamageable
 {
     [SerializeField] protected int damageAmount=3;
     [SerializeField] protected float health=8;
@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             OnDestroyEnemyObject();
-            ExperienceSystem.instance.AddXP(xp);
 
         }
 
@@ -33,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroyEnemyObject()
     {
+        PlayerWrapper.instance.PlayerExperienceSystem.AddXP(xp);
         this.gameObject.SetActive(false);
     }
 

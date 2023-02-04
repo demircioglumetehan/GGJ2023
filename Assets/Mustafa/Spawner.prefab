@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 2589473095486228638, guid: e5a1843b41cd1b54c9191fc0767a0672, type: 3}
-  - {fileID: 2589473095486228638, guid: b1af6d3ff0eb79349b6483a92bd9653a, type: 3}
-  - {fileID: 2589473095486228638, guid: a078964fa1ba5eb4bb8ed00074e99df1, type: 3}
-  - {fileID: 2589473095486228638, guid: f79761a228feaf7478dd6bce950699f6, type: 3}
+  - {fileID: -7902146170653515552, guid: e5a1843b41cd1b54c9191fc0767a0672, type: 3}
+  - {fileID: -6885784130196440326, guid: b1af6d3ff0eb79349b6483a92bd9653a, type: 3}
+  - {fileID: 209581055096974086, guid: a078964fa1ba5eb4bb8ed00074e99df1, type: 3}
+  - {fileID: -18802728396720925, guid: f79761a228feaf7478dd6bce950699f6, type: 3}
   spawnInterval: 1
   timer: 0
   intervalMinus: 0.01
+  SpawnedEnemies: []
