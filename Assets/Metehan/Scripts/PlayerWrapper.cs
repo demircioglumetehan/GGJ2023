@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWrapper : MonoBehaviour
+public class PlayerWrapper : Singleton<PlayerWrapper>
 {
-    public static PlayerWrapper THIS;
-    private void Awake()
+    public PlayerHealthController PlayerHealthController{get;private set;}
+    public PlayerAttackController PlayerAttackController { get; private set; }
+    public PlayerAnimationController PlayerAnimationController { get; private set; }
+    protected override void Awake()
     {
-        THIS = this;
+        PlayerHealthController = GetComponent<PlayerHealthController>();
+        PlayerAttackController = GetComponent<PlayerAttackController>();
+        PlayerAnimationController = GetComponent<PlayerAnimationController>();
+        base.Awake();   
     }
 }

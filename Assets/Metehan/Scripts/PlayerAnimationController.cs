@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,7 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private float coolDownTimeForAttack=.5f;
     private CharacterController characterController;
-    int lastcombatinteger = 0;
-    float latestAttackTime;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -23,18 +23,47 @@ public class PlayerAnimationController : MonoBehaviour
         {
             playerAnimator.SetFloat("speed", 0f);
         }
-        if (Input.GetMouseButtonDown(0)|| Input.GetKey(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
         {
-            if(Time.time - latestAttackTime> coolDownTimeForAttack)
-            {
-                latestAttackTime = Time.time;
-                lastcombatinteger++;
-                if (lastcombatinteger > 4)
-                    lastcombatinteger = 1;
+            playerAnimator.SetBool("Attack" ,true);
+          
+        }
+        if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space))
+        {
+            playerAnimator.SetBool("Attack", false);
 
-                playerAnimator.SetTrigger("Attack" + lastcombatinteger.ToString());
-            }
-         
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            playerAnimator.SetBool("Run", true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            playerAnimator.SetBool("Run", false);
         }
     }
+    public void UpdateWalkAnim(float speed)
+    {
+        playerAnimator.SetFloat("speed", speed);
+    }
+  
+    public void EnableRunAnim()
+    {
+        playerAnimator.SetBool("Run", true);
+    }
+    public void DisableRunAnim()
+    {
+        playerAnimator.SetBool("Run", false);
+    }
+    public void EnableAttackAnim()
+    {
+        playerAnimator.SetBool("Attack", true);
+
+    }
+    public void DisableAttackAnim()
+    {
+        playerAnimator.SetBool("Attack", false);
+    }
+
+
 }
