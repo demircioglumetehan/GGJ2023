@@ -5,18 +5,26 @@ using UnityEngine;
 
 public class GateTeleporter : MonoBehaviour
 {
+    public static Action OnPlayerTeleportedToArena;
     [SerializeField] private Transform teleportPoint;
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerStay(Collider other)
     {
-        if(other.TryGetComponent<PlayerWrapper>(out var player))
+        if (other.CompareTag("Player"))
         {
-            TeleportPlayerToArena(player);
+            TeleportPlayerToArena();
 
         }
     }
+   
 
-    private void TeleportPlayerToArena(PlayerWrapper player)
+    private void TeleportPlayerToArena()
     {
-        player.transform.position = teleportPoint.transform.position;
+        PlayerWrapper.instance.PlayerMovement.enabled = false;
+        PlayerWrapper.instance.CharacterController.enabled = false;
+        PlayerWrapper.instance.transform.position = teleportPoint.transform.position;
+        PlayerWrapper.instance.PlayerMovement.enabled = true;
+        PlayerWrapper.instance.CharacterController.enabled = true;
+        OnPlayerTeleportedToArena?.Invoke();
     }
 }
