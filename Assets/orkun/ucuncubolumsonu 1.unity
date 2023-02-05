@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -743}
+  m_AnchoredPosition: {x: 0, y: -868}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213850365
@@ -182,9 +182,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "3. B\xF6l\xFCm sonu Final Boss\u2019u yendi\u011Fi zaman, ailesinin ve
-    yak\u0131n arkada\u015Flar\u0131n\u0131n \xF6ld\xFCr\xFCld\xFC\u011F\xFCn\xFC
-    g\xF6r\xFCr.\n\nMC: Onlar\u0131n intikam\u0131n\u0131 almak i\xE7in ant i\xE7iyorum.\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  m_text: "\r<align=center> <size=40>3.Bolum (Govde) Sonu</size> </align>\n\nKahramanimiz
+    icin izdirap dolu dakikalar baslar, ailesinin ve deger verdigi her seyin  olduruldugunu
+    hatirlar. \r\n\r\nOfkeden deliye donen kahramanimiz ailesinin intikamini almak
+    icin ant icer ama kimden intikam almalidir? \r\n\n<align=center> <size=24> Devam
+    Edecek ... </size> </align> \n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d6f3b6fd13d0bb4aaa145bf52f7fb6d, type: 2}
   m_sharedMaterial: {fileID: 8113382804387105539, guid: 6d6f3b6fd13d0bb4aaa145bf52f7fb6d, type: 2}
@@ -458,14 +460,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332690283}
-  m_LocalRotation: {x: -0.5735764, y: 0, z: 0, w: 0.8191521}
+  m_LocalRotation: {x: -0.45399043, y: 0, z: 0, w: 0.8910066}
   m_LocalPosition: {x: 981, y: -150, z: -220}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -70, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -54, y: 0, z: 0}
 --- !u!1 &1814020733
 GameObject:
   m_ObjectHideFlags: 0
