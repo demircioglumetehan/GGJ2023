@@ -182,12 +182,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "MC 1.b\xF6l\xFCm Final Boss\u2019u yendi\u011Fi zaman haf\u0131zas\u0131n\u0131n
-    bir b\xF6l\xFCm\xFC gelir. MC bir krall\u0131kta, kahraman ilan edilen ve halk
-    taraf\u0131ndan sevilen bir sava\u015F\xE7\u0131 oldu\u011Funu hat\u0131rlar.
-    \r\n\r\nMC: Sava\u015F kahraman\u0131 bir sava\u015F\xE7\u0131yd\u0131m.\r\n\r\nMC
-    haf\u0131zas\u0131n\u0131 geri kazanmak i\xE7in ilerlemesi gerekti\u011Fini anlar
-    ve 2. b\xF6l\xFCme do\u011Fru yola \xE7\u0131kar.\r\n\n\n\n\n\n"
+  m_text: "<align=center> <size=40>1. Bolum (Yapraklar) Sonu\r</size> </align> \r\n\r\r\nKahramanimiz
+    dusmanlarini yendigi zaman hafizasinin bir bolumunun geri geldigini gorur. Kadim
+    bir  krallikta,savas kahraman oldugunu hatirlar. Halk tarafindan sevilen ve saygi
+    duyulan bir savascidir.\r\n\r\nHafizasini geri kazanmak icin dusmanlarini yenmesi
+    gerektigini anlayan kahramanimizin ilerlemekten baska caresi yoktur.\r\n\n<align=center>
+    <size=24> Devam Edecek ... </size> </align> \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d6f3b6fd13d0bb4aaa145bf52f7fb6d, type: 2}
   m_sharedMaterial: {fileID: 8113382804387105539, guid: 6d6f3b6fd13d0bb4aaa145bf52f7fb6d, type: 2}
@@ -461,14 +461,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332690283}
-  m_LocalRotation: {x: -0.5735764, y: 0, z: 0, w: 0.8191521}
+  m_LocalRotation: {x: -0.45399043, y: 0, z: 0, w: 0.8910066}
   m_LocalPosition: {x: 981, y: -150, z: -220}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -70, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -54, y: 0, z: 0}
 --- !u!1 &1814020733
 GameObject:
   m_ObjectHideFlags: 0
