@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour,IDamageable
 {
     private Animator monsterAnimator;
     [SerializeField] protected float speed = 5f;
+    [SerializeField] protected float damageAmount = 5f;
     [SerializeField] protected float attackDistance = 1f;
     [SerializeField] protected float initialHealth = 200f;
     [SerializeField] protected float currentHealth ;
@@ -84,6 +85,7 @@ public class Monster : MonoBehaviour,IDamageable
             return;
         animatingattack = true;
         StartCoroutine(CoolDownTimerCor());
+        PlayerWrapper.instance.PlayerHealthController.Health -= damageAmount;
         monsterAnimator.SetTrigger("Attack");
         monsterAnimator.SetBool("Walk", false);
     }

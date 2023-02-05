@@ -8,7 +8,7 @@ public class SceneController : Singleton<SceneController>
 
     public void LoadFirstLevel()
     {
-        SceneManager.LoadScene("Level1");//string name or index of first lvl scene
+        SceneManager.LoadScene(1);//string name or index of first lvl scene
     }
     public void LoadNextLevel()
     {

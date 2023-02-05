@@ -23,6 +23,7 @@ public class PlayerHealthController : MonoBehaviour
                 OnPlayerDied();
             }
             currentHealth = value;
+            UpdateCurrentHealthBar();
         }
     }
     private void Start()
@@ -42,7 +43,7 @@ public class PlayerHealthController : MonoBehaviour
         {
             interactible.HitPlayer();
             //print("OnCollisionEnter player health: " + Health);
-            UpdateCurrentHealthBar();
+           
         }
     }
 
