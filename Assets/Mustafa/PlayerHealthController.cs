@@ -2,15 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    [SerializeField] private int health=100;
-    public int Health
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float initialHealth = 100;
+
+    [SerializeField] private Image currentHealthFillingImage;
+    public float Health
     {
         get
         {
-            return health;
+            return currentHealth;
         }
         set
         {
@@ -18,23 +22,44 @@ public class PlayerHealthController : MonoBehaviour
             {
                 OnPlayerDied();
             }
-            health = value;
+            currentHealth = value;
         }
     }
-
+    private void Start()
+    {
+        currentHealth = initialHealth;
+    }
     private void OnPlayerDied()
     {
         Debug.Log("Player Died");
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        var interactible = other.GetComponent<Enemy>();
+        var interactible = collision.gameObject.GetComponent<Enemy>();
         if (interactible != null)
         {
             interactible.HitPlayer();
-            print("player health: " + Health);
+            //print("OnCollisionEnter player health: " + Health);
+            UpdateCurrentHealthBar();
         }
     }
 
+    private void UpdateCurrentHealthBar()
+    {
+        currentHealthFillingImage.fillAmount = (currentHealth / initialHealth);
+        //print("fill amount: " + currentHealthFillingImage.fillAmount);
+    }
+
+   /* public void TakeDamage(float damageAmount)
+    {
+        health -=(int) damageAmount;
+
+        UpdateCurrentHealthBar();
+        if (health <= 0)
+        {
+            OnDestroyStone();
+        }
+    }*/
 }
