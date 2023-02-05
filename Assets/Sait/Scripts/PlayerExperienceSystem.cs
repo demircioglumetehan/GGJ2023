@@ -10,6 +10,7 @@ public class PlayerExperienceSystem : MonoBehaviour
     public float totalXP;
 
     [SerializeField] private Image currentXPFillingImage;
+    [SerializeField] private GameObject skillsUpdatePanel;
     //public TextMeshProUGUI text;
     private void Start()
     {
@@ -34,18 +35,6 @@ public class PlayerExperienceSystem : MonoBehaviour
             level += 1;
             LevelUp(level);
         }
-        /*
-        for (int i = levelThresholds.Length - 1; i >= 0; i--)
-        {
-
-            if (currentXP >= levelThresholds[i])
-            {
-                print("i" + i);
-                level += 1;
-                LevelUp(level);
-                break;
-            }
-        }*/
     }
     private void UpdateSlider()
     {
@@ -61,6 +50,8 @@ public class PlayerExperienceSystem : MonoBehaviour
         currentXP = 0;
         // burada oyuncunun seviyesi güncellendi ve yetenekleri / özellikleri güncellenebilir
 
+        Time.timeScale = 0;
+        skillsUpdatePanel.SetActive(true);
 
     }
 }
