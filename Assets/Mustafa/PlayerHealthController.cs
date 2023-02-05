@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
@@ -33,8 +34,14 @@ public class PlayerHealthController : MonoBehaviour
     private void OnPlayerDied()
     {
         Debug.Log("Player Died");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    internal void FullHealth()
+    {
+        currentHealth = initialHealth;
+        UpdateCurrentHealthBar();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -9,6 +9,30 @@ EditorBuildSettings:
     path: Assets/Mustafa/UI/Menu.unity
     guid: f6cd3c71dea0b4a4f94d56b41bc6833f
   - enabled: 1
-    path: Assets/Metehan/Metehan.unity
+    path: Assets/orkun/birincibolumcgiris.unity
+    guid: d6ed3da4fb8dc344f86c838d60c6587b
+  - enabled: 1
+    path: Assets/Metehan/Level1.unity
     guid: 50f3b19821221454fa0f5071ed176d68
+  - enabled: 1
+    path: Assets/orkun/birincibolumcikis.unity
+    guid: c14a0aa8faa78f742aae601ce811a037
+  - enabled: 1
+    path: Assets/Metehan/Level2.unity
+    guid: 6cbaf0eec1ad84cc396184a831790a0e
+  - enabled: 1
+    path: Assets/orkun/ikincibolumsonu.unity
+    guid: 99f94958ab10c344bbf5661838df5846
+  - enabled: 1
+    path: Assets/Metehan/Level3.unity
+    guid: b91c920e0e6e44cefb940daeeaf523dd
+  - enabled: 1
+    path: Assets/orkun/ucuncubolumsonu 1.unity
+    guid: 285f72aeb8bb6724b9c0f38f161745ad
+  - enabled: 1
+    path: Assets/Metehan/Level4.unity
+    guid: a59521d7d48d043e1816bc3908214506
+  - enabled: 1
+    path: Assets/orkun/dorduncubolum.unity
+    guid: 9af7deb63fd3c7d419b4cac5cdc1c5d9
   m_configObjects: {}

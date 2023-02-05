@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Monster : MonoBehaviour,IDamageable
 {
+    public static Action OnMonsterDied;
     private Animator monsterAnimator;
     [SerializeField] protected float speed = 5f;
     [SerializeField] protected float damageAmount = 5f;
@@ -122,7 +124,9 @@ public class Monster : MonoBehaviour,IDamageable
         Debug.Log("Monster Destroyed");
         monsterAnimator.SetTrigger("Dead");
         Invoke("DisappearMonster", .5f);
-      
+        OnMonsterDied?.Invoke();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
     private void DisappearMonster()
     {

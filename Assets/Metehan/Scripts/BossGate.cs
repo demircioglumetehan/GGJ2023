@@ -25,7 +25,7 @@ public class BossGate : MonoBehaviour
 
     private void OnDisable()
     {
-        Stone.OnStoneDestroyed += EnableGate;
+        Stone.OnStoneDestroyed -= EnableGate;
     }
     private void EnableGate()
     {

@@ -5,6 +5,7 @@ using DG.Tweening;
 public class TurningPlayer : PlayerSkill
 {
     [SerializeField] private float turnSpeed;
+   
     [SerializeField] private float coolDownTime=2f;
     bool canUse = true;
     private void Update()
@@ -20,9 +21,10 @@ public class TurningPlayer : PlayerSkill
         if (!canUse)
             return;
         canUse = false;
+        Audiomanager.instance?.PlayTurnSound();
         var value = skillFeature.Value;
         PlayerWrapper.instance.PlayerAttackController.ActivateTurning();
-        transform.DOLocalRotate(new Vector3(0, 360f, 0f), 1f/ turnSpeed, RotateMode.FastBeyond360).SetRelative(true).SetLoops(Mathf.RoundToInt(value), LoopType.Restart).SetEase(Ease.Linear).OnComplete(() =>
+        transform.DOLocalRotate(new Vector3(0, 360f, 0f), 1f/ turnSpeed, RotateMode.FastBeyond360).SetRelative(true).SetLoops(32, LoopType.Restart).SetEase(Ease.Linear).OnComplete(() =>
         {
             PlayerWrapper.instance.PlayerAttackController.DeactivateTurning();
         });

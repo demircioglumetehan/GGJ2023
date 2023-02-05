@@ -25,6 +25,7 @@ public class GateTeleporter : MonoBehaviour
         PlayerWrapper.instance.transform.position = teleportPoint.transform.position;
         PlayerWrapper.instance.PlayerMovement.enabled = true;
         PlayerWrapper.instance.CharacterController.enabled = true;
+        PlayerWrapper.instance.PlayerHealthController.FullHealth();
         OnPlayerTeleportedToArena?.Invoke();
     }
 }

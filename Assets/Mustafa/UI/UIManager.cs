@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
@@ -25,22 +26,22 @@ public class UIManager : Singleton<UIManager>
 
     private void StartGameLevel4()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(8);
     }
 
     private void StartGameLevel3()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(6);
     }
 
     private void StartGameLevel1()
     {
-        SceneController.instance.LoadFirstLevel();
+        SceneManager.LoadScene(1);
     }
 
     private void StartGameLevel2()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(4);
     }
 
     public void StartGame()
