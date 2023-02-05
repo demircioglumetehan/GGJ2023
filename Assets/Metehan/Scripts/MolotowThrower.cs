@@ -20,7 +20,7 @@ public class MolotowThrower : PlayerSkill
     public override void ActivateSkill()
     {
         var spawnAmount = Mathf.RoundToInt(skillFeature.Value);
-        Disableolotows();
+        DisableMolotows();
         StartCoroutine(ThrowMolotowsCor(spawnAmount));
     }
 
@@ -31,25 +31,26 @@ public class MolotowThrower : PlayerSkill
             molotowObjects[i].gameObject.SetActive(true);
             molotowObjects[i].transform.position = PlayerWrapper.instance.transform.position ;
 
-            Vector3 molotowEndPosition = GetRandomCircle();
+            Vector3 molotowEndPosition = GetRandomCircle(molotowObjects[i]);
 
-            molotowObjects[i].transform.DOJump(molotowEndPosition,1,1,.5f);
+            molotowObjects[i].ThrowMolotow(molotowEndPosition);
+                
             yield return new WaitForSeconds(.2f);
 
 
         }
     }
 
-    private Vector3 GetRandomCircle()
+    private Vector3 GetRandomCircle(Molotow molotow)
     {
         var randompointdirection = Random.insideUnitCircle.normalized;
         var point= throwDistance* randompointdirection;
-        return new Vector3(PlayerWrapper.instance.transform.position.x + point.x, 1f, PlayerWrapper.instance.transform.position.z + point.y);
+        return new Vector3(PlayerWrapper.instance.transform.position.x + point.x, molotow.transform.position.y, PlayerWrapper.instance.transform.position.z + point.y);
 
 
     }
 
-    private void Disableolotows()
+    private void DisableMolotows()
     {
         for (int i = 0; i < molotowObjects.Count; i++)
         {
