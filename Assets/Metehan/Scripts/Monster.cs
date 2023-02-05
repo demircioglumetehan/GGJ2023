@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,18 +12,26 @@ public class Monster : MonoBehaviour,IDamageable
     [SerializeField] protected float damageAmount = 5f;
     [SerializeField] protected float attackDistance = 1f;
     [SerializeField] protected float initialHealth = 200f;
+
+    internal void PushTowards(Shield shield)
+    {
+        var forcedirection = (shield.transform.position - transform.forward).normalized;
+        transform.DOMove(transform.position + 2f * forcedirection, .2f);
+    }
+
     [SerializeField] protected float currentHealth ;
     [SerializeField] protected Image healthBarImage ;
     bool fightStarted = false;
     bool following = false;
     bool attacking = false;
     bool animatingattack = false;
+    private Rigidbody monsterRigidbody;
     private void OnEnable()
     {
         GateTeleporter.OnPlayerTeleportedToArena += StartFight;
     }
 
-   
+    
 
     private void OnDisable()
     {
@@ -43,6 +52,7 @@ public class Monster : MonoBehaviour,IDamageable
     private void Awake()
     {
         monsterAnimator = GetComponent<Animator>();
+        monsterRigidbody = GetComponent<Rigidbody>();
 
 
     }

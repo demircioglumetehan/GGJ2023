@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class Enemy : MonoBehaviour,IDamageable
 {
     [SerializeField] protected int damageAmount=3;
@@ -11,9 +11,16 @@ public class Enemy : MonoBehaviour,IDamageable
     [SerializeField] protected float speed = 5f;
     [SerializeField] protected int xp = 5;
     private Animator enemyAnimator;
+    private Rigidbody enemyRigidbody;
     private void Awake()
     {
         enemyAnimator = GetComponentInChildren<Animator>();
+        enemyRigidbody = GetComponent<Rigidbody>();
+    }
+    internal void PushTowards(Shield shield)
+    {
+        var forcedirection = (shield.transform.position - transform.forward).normalized;
+        transform.DOMove(transform.position + 2f * forcedirection,.2f);
     }
     private void Update()
     {

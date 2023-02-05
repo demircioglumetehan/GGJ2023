@@ -8,6 +8,7 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private Weapon currentWeapon;
     bool attacking = false;
     bool turning = false;
+    bool ShieldSkillActive = false;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
@@ -28,6 +29,12 @@ public class PlayerAttackController : MonoBehaviour
     {
         turning = true;
     }
+
+    internal void ActivateTurningShield()
+    {
+        ShieldSkillActive = true;
+    }
+
     public void DeactivateTurning()
     {
         turning = false;
@@ -43,8 +50,12 @@ public class PlayerAttackController : MonoBehaviour
         {
             damageableobject.TakeDamage(currentWeapon.WeaponFeature.hitDamage);
         }
+      
             
     }
 
-   
+    internal void DeactivateTurningShield()
+    {
+        ShieldSkillActive = false;
+    }
 }

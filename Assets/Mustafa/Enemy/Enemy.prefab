@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 3
-  health: 2
+  health: 4
   speed: 2
   xp: 5
 --- !u!136 &4158236682495308787
